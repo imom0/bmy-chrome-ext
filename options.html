@@ -1,26 +1,15 @@
 <html>
-    <head>
-        <title>BMY web filter options</title>
-        <script type="text/javascript">
-            function setList() {
-                var input_list = document.getElementById("id_list");
-                localStorage.setItem("bmy",input_list.value);
-                input_list.value = "";
-            }
-
-            function saved() {
-                var status = document.getElementById("status");
-                status.innerHTML = "Filter: " +
-                    localStorage.getItem("bmy");
-            }
-
-            window.onload = saved;
-        </script>
-    <body>
-        <h1>Your blacklist here.</h1>
-        <h2>Example: sleepless|homepage|nic </h2>
-        <input type="text" id="id_list">
-        <button onclick="setList();saved();">Set IDs</button>
-        <p id="status"> </p>
-    </body>
+  <head>
+	<title>BMY web filter options</title>
+  </head>
+  <body>
+	<h1>Your blacklist here.</h1>
+	<h2>Example: sleepless|homepage|nic </h2>
+	<form action="">
+	  <input type="text" id="id_list" />
+	  <button id="save">Set IDs</button>
+	  <p id="status"> </p>
+	</form>
+  </body>
+  <script src="options.js"></script>
 </html>

@@ -28,7 +28,7 @@ function filter()
 
     for (var i=7;i<base.length;i++)
     {
-        var source_html = base[i].getElementsByTagName("a")[3].innerHTML;
+        var source_html = base[i].getElementsByTagName("a")[4].innerHTML;
         if (list_re.test(source_html)) displayNone(base[i]);
     }
 }
