@@ -14,6 +14,7 @@ function filter()
     function reInit() {
         chrome.extension.sendRequest({req_ids:"now"},function(response){ localStorage["bmy"] = response.ids;});
         var list = localStorage["bmy"];
+        list = list.split('|').map(function(e) { return '\\b' + e + '\\b';}).join('|');
         var re = new RegExp(list,"i");
         return re;
     }
