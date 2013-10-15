@@ -16,6 +16,10 @@
 			"js": ["autoredirect.js"],
 			"all_frames": true,
 			"run_at": "document_end"
+		},
+		{
+			"js": ["jquery-1.10.2.min.js", "notify.js"],
+			"matches": [ "http://202.117.1.8/*", "http://bbs.xjtu.edu.cn/*", "http://bbs.xjtu6.edu.cn/*"]
 		}
 	]
 }
