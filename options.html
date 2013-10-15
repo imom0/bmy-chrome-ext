@@ -1,15 +1,20 @@
 <html>
   <head>
 	<title>BMY web filter options</title>
+	<link rel="stylesheet" href="css/uikit.min.css" />
   </head>
   <body>
-	<h1>Your blacklist here.</h1>
-	<h2>Example: sleepless|homepage|nic </h2>
-	<form action="">
-	  <input type="text" id="id_list" />
-	  <button id="save">Set IDs</button>
-	  <p id="status"> </p>
-	</form>
+	<div class="uk-grid">
+	  <div class="uk-panel uk-panel-box uk-panel-box-primary uk-width-1-2 uk-container-center uk-text-center">
+	  <h1>Your blacklist here.</h1>
+	  <h2>Example: sleepless|homepage|nic </h2>
+	  <form class="uk-form" action="">
+		<input type="text" id="id_list" />
+		<button class="uk-button" id="save">Set IDs</button>
+		<p id="status"> </p>
+	  </form>
+	</div>
+	</div>
+	<script src="options.js"></script>
   </body>
-  <script src="options.js"></script>
 </html>
