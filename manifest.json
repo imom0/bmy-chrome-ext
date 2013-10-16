@@ -4,6 +4,9 @@
 	"version": "0.9.2",
 	"description": "A chrome extension for BMY bbs",
 	"options_page": "options.html",
+	"permissions": [
+		"notifications", "http://202.117.1.8/", "http://bbs.xjtu.edu.cn/", "http://bbs.xjtu6.edu.cn/"
+	],
 	"content_scripts": [
 		{
 			"matches": [ "http://202.117.1.8/*/bbstcon*", "http://bbs.xjtu.edu.cn/*/bbstcon*", "http://bbs.xjtu6.edu.cn/*/bbstcon*"],
@@ -21,5 +24,11 @@
 			"js": ["jquery-1.10.2.min.js", "notify.js"],
 			"matches": [ "http://202.117.1.8/*", "http://bbs.xjtu.edu.cn/*", "http://bbs.xjtu6.edu.cn/*"]
 		}
+	],
+	"background": {
+		"scripts": ["notify.js"]
+	},
+	"web_accessible_resources": [
+		"img/notify.png"
 	]
 }
