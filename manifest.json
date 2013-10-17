@@ -1,7 +1,7 @@
 {
 	"name": "bmy-chrome-ext",
 	"manifest_version": 2,
-	"version": "0.9.3",
+	"version": "0.9.4",
 	"description": "A chrome extension for BMY bbs",
 	"options_page": "options.html",
 	"permissions": [
@@ -10,6 +10,7 @@
 		"storage",
 		"http://bbs.xjtu.edu.cn/"
 	],
+	"update_url": "https://raw.github.com/imom0/bmy-chrome-ext/master/updates.xml",
 	"content_scripts": [
 		{
 			"matches": [ "http://202.117.1.8/*/bbstcon*", "http://bbs.xjtu.edu.cn/*/bbstcon*", "http://bbs.xjtu6.edu.cn/*/bbstcon*"],
