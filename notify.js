@@ -1,20 +1,37 @@
 $(function() {
-  var fetchNotification = function() {
-    var path = document.location.pathname.split('/')[1],
-        url = document.location.protocol + "//" + document.location.hostname + "/" + path + '/bbsnotify',
-        page = $.parseHTML($.getJSON(url)),
-        unreadCount = $('.notify-item', page).length,
-        unreadCountKey = 'bmy-unread-count',
-        cachedUnreadCount = localStorage.getItem(unreadCountKey) || 0;;
-        if (window.webkitNotifications.checkPermission() == 0) { 
-          if (unreadCount > cachedUnreadCount) {
-              window.webkitNotifications.createNotification('img/notify.png', '通知', '有新的BMY提醒...').show();
+  var bmyUrl;
+  var getBmyUrl = function() {
+    chrome.tabs.query({url: 'http://bbs.xjtu.edu.cn/*'},
+      function(tab) {
+        bmyUrl = tab[0].url;
+      }
+    );
+    return bmyUrl;
+  },
+  fetchNotification = function() {
+    var bmyUrl = getBmyUrl();
+    if (!!bmyUrl) {
+      var ident = bmyUrl.split('/')[3],
+          url = "http://bbs.xjtu.edu.cn/" + ident + '/bbsnotify',
+          xhr = new XMLHttpRequest();
+          xhr.onload = function() {
+            page = $.parseHTML(xhr.responseText),
+            unreadCount = $('.notify-item', page).length,
+            unreadCountKey = 'bmy-unread-count',
+            cachedUnreadCount = localStorage.getItem(unreadCountKey) || 0;
+            if (window.webkitNotifications.checkPermission() == 0) { 
+              if (unreadCount > cachedUnreadCount) {
+                  window.webkitNotifications.createNotification('img/notify.png', '通知', '有新的BMY提醒...').show();
+              }
+            } else {
+              window.webkitNotifications.requestPermission();
+            }
+            localStorage.setItem(unreadCountKey, unreadCount);
           }
-        } else {
-          window.webkitNotifications.requestPermission();
-        }
-        localStorage.setItem(unreadCountKey, unreadCount);
+          xhr.open('GET', url);
+          xhr.send();
+    }
   }
-  window.setInterval(fetchNotification, 60 * 1000);
+  window.setInterval(fetchNotification, 30 * 1000);
   fetchNotification();
 })
