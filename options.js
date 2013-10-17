@@ -1,13 +1,16 @@
 function setList() {
   var input_list = document.getElementById("id_list");
-  localStorage.setItem("bmy",input_list.value);
+  chrome.storage.local.set({'bmy_blacklist_usernames': input_list.value});
   input_list.value = "";
   renderList();
 }
 
 function renderList() {
-  var status = document.getElementById("status");
-  status.innerHTML = "Filter: " + localStorage.getItem("bmy");
+  chrome.storage.local.get('bmy_blacklist_usernames', function(data) {
+    console.log(data);
+    var status = document.getElementById("status");
+    status.innerHTML = "Filter: " + data.bmy_blacklist_usernames;
+  });
 }
 
 document.addEventListener('DOMContentLoaded', renderList);

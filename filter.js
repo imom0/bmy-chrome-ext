@@ -9,29 +9,19 @@ Fri Feb 25,2011
 
 */
 
-function filter()
-{
-    function reInit() {
-        chrome.extension.sendRequest({req_ids:"now"},function(response){ localStorage["bmy"] = response.ids;});
-        var list = localStorage["bmy"];
-        list = list.split('|').map(function(e) { return '\\b' + e + '\\b';}).join('|');
-        var re = new RegExp(list,"i");
-        return re;
-    }
+(function() {
+    chrome.storage.local.get('bmy_blacklist_usernames', function(data){
+        var list = data.bmy_blacklist_usernames.split('|').map(function(e) { return '\\b' + e + '\\b';}).join('|'),
+            pattern = new RegExp(list,"i");
 
-    list_re = reInit();
+        var base = document.getElementsByTagName("table");
 
-    function displayNone(obj) {
-        obj.style.display = "none";
-    }
-
-    var base = document.getElementsByTagName("table");
-
-    for (var i=7;i<base.length;i++)
-    {
-        var source_html = base[i].getElementsByTagName("a")[4].innerHTML;
-        if (list_re.test(source_html)) displayNone(base[i]);
-    }
-}
-
-filter();
+        for (var i=7;i<base.length;i++)
+        {
+          var source_html = base[i].getElementsByTagName("a")[4].innerHTML;
+          if (pattern.test(source_html)) {
+            base[i].style.display = "none";
+          }
+        }
+    });
+})();
