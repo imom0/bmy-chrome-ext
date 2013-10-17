@@ -19,16 +19,12 @@ $(function() {
             unreadCount = $('.notify-item', page).length,
             unreadCountKey = 'bmy-unread-count',
             cachedUnreadCount = localStorage.getItem(unreadCountKey) || 0;
-            if (window.webkitNotifications.checkPermission() == 0) { 
-              if (unreadCount > cachedUnreadCount) {
-                  var notification = window.webkitNotifications.createNotification('img/notify.png', '通知', '有新的BMY提醒...');
-                  notification.onclick = function() {
-                    chrome.tabs.create({url: url});
-                  }
-                  notification.show();
+            if (unreadCount > cachedUnreadCount) {
+              var notification = window.webkitNotifications.createNotification('img/notify.png', '通知', '有新的BMY提醒...');
+              notification.onclick = function() {
+                chrome.tabs.create({url: url});
               }
-            } else {
-              window.webkitNotifications.requestPermission();
+              notification.show();
             }
             localStorage.setItem(unreadCountKey, unreadCount);
           }
