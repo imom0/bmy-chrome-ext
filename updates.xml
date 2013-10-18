@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
 	<app appid='dcaakfkllcfekgkcalbclbdedhobclag'>
-		<updatecheck codebase='https://github.com/imom0/bmy-chrome-ext/releases/download/v0.9.5/bmy-chrome-ext.crx' version='0.9.5' />
+		<updatecheck codebase='https://github.com/imom0/bmy-chrome-ext/releases/download/v0.9.6/bmy-chrome-ext.crx' version='0.9.6' />
 	</app>
 </gupdate>

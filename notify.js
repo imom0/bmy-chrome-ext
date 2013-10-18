@@ -16,7 +16,7 @@ $(function() {
           xhr = new XMLHttpRequest();
           xhr.onload = function() {
             page = $.parseHTML(xhr.responseText),
-            unreadCount = $('.notify-item', page).length,
+            unreadCount = $('.notify-item a[href^=bbscon]', page).length,
             unreadCountKey = 'bmy-unread-count',
             cachedUnreadCount = localStorage.getItem(unreadCountKey) || 0;
             if (unreadCount > cachedUnreadCount) {
