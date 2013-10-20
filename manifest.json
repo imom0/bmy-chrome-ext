@@ -20,7 +20,7 @@
 		},
 		{
 			"matches": [ "http://202.117.1.8/*/bbssbs*", "http://bbs.xjtu.edu.cn/*/bbssbs*", "http://bbs.xjtu6.edu.cn/*/bbssbs*"],
-			"js": ["autoredirect.js"],
+			"js": ["lib/autoredirect.js"],
 			"all_frames": true,
 			"run_at": "document_end"
 		}
