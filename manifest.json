@@ -1,7 +1,7 @@
 {
 	"name": "bmy-chrome-ext",
 	"manifest_version": 2,
-	"version": "0.9.6",
+	"version": "0.9.7",
 	"description": "A chrome extension for BMY bbs",
 	"options_page": "options.html",
 	"permissions": [
@@ -23,12 +23,19 @@
 			"js": ["lib/autoredirect.js"],
 			"all_frames": true,
 			"run_at": "document_end"
+		},
+		{
+			"matches": [ "http://202.117.1.8/", "http://bbs.xjtu.edu.cn/", "http://bbs.xjtu6.edu.cn/"],
+			"js": ["jquery-1.10.2.min.js", "lib/autologin.js"],
+			"run_at": "document_end"
 		}
+
 	],
 	"background": {
 		"scripts": ["jquery-1.10.2.min.js", "notify.js"]
 	},
 	"web_accessible_resources": [
-		"img/notify.png"
+		"img/notify.png",
+		"jquery-1.10.2.min.js"
 	]
 }
