@@ -1,0 +1,8 @@
+{
+  "name": "bmy-chrome-ext",
+  "version": "0.9.7",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-coffee": "~0.7.0"
+  }
+}
