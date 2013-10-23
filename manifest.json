@@ -1,7 +1,7 @@
 {
 	"name": "bmy-chrome-ext",
 	"manifest_version": 2,
-	"version": "0.9.7",
+	"version": "0.9.8",
 	"description": "A chrome extension for BMY bbs",
 	"options_page": "options.html",
 	"permissions": [
