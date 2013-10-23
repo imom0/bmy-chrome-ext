@@ -14,7 +14,7 @@
 	"content_scripts": [
 		{
 			"matches": [ "http://202.117.1.8/*/bbstcon*", "http://bbs.xjtu.edu.cn/*/bbstcon*", "http://bbs.xjtu6.edu.cn/*/bbstcon*"],
-			"js": ["filter.js"],
+			"js": ["jquery-1.10.2.min.js", "lib/filter.js"],
 			"all_frames": true,
 			"run_at": "document_end"
 		},
