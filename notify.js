@@ -34,4 +34,21 @@ $(function() {
   }
   window.setInterval(fetchNotification, 30 * 1000);
   fetchNotification();
+
+  chrome.contextMenus.create({
+        title: "复制当前页面url",
+        contexts:["all"],
+        onclick: function(info) {
+          var temp = $('<textarea />'),
+              url = info.frameUrl,
+              universalUrl = url.split('/');
+          universalUrl[3] = 'BMY';
+          universalUrl = universalUrl.join('/');
+          temp.text(universalUrl);
+          $('body').append(temp);
+          temp.select();
+          document.execCommand('copy');
+          temp.remove();
+        }
+  });
 })

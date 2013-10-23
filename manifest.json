@@ -8,6 +8,7 @@
 		"notifications",
 		"tabs",
 		"storage",
+		"contextMenus",
 		"http://bbs.xjtu.edu.cn/"
 	],
 	"update_url": "https://raw.github.com/imom0/bmy-chrome-ext/master/updates.xml",
@@ -34,8 +35,12 @@
 	"background": {
 		"scripts": ["jquery-1.10.2.min.js", "notify.js"]
 	},
+	"icons": {
+		"16": "img/notify-16.png"
+	},
 	"web_accessible_resources": [
 		"img/notify.png",
+		"img/notify-16.png",
 		"jquery-1.10.2.min.js"
 	]
 }
