@@ -29,6 +29,11 @@
 			"matches": [ "http://202.117.1.8/", "http://bbs.xjtu.edu.cn/", "http://bbs.xjtu6.edu.cn/"],
 			"js": ["jquery-1.10.2.min.js", "lib/autologin.js"],
 			"run_at": "document_end"
+		},
+		{
+			"matches": [ "http://202.117.1.8/*/bbsfoot*", "http://bbs.xjtu.edu.cn/*/bbsfoot*", "http://bbs.xjtu6.edu.cn/*/bbsfoot*"],
+			"all_frames": true,
+			"css": ["css/custom.css"]
 		}
 
 	],
