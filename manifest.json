@@ -38,7 +38,7 @@
 
 	],
 	"background": {
-		"scripts": ["jquery-1.10.2.min.js", "notify.js"]
+		"scripts": ["jquery-1.10.2.min.js", "lib/background.js"]
 	},
 	"icons": {
 		"16": "img/notify-16.png"
