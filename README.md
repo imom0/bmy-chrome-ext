@@ -23,3 +23,7 @@ bmy chrome extension
 - v0.9.1(2013.10.08) 修复了因bmy页面样式导致的解析错误
 
 - v0.9.0(2011.09.15) 简单的过滤了主题模式下含有某id的楼
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/imom0/bmy-chrome-ext/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
